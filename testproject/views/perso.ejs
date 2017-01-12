@@ -9,15 +9,21 @@
 <center>
 <h1><%=mesdata.title%></h1>
 <p><%=mesdata.content%></p>
-</center>
+<div class="info">
 <p>Votre email : <%=user.email%></p>
 <p>Votre Nom : <%=user.nom%></p>
 <p>Votre prenom : <%=user.prenom%></p>
+</div>
+</center>
 
-<h3>modifier vos informations :</h3>
+<br /><br />
+
+<div class=modif>
+<h1>Modifier vos informations :</h1>
   <form method="POST" action="/user/<%= user.id%>" >
     <p>Nom :  </p><input type="text" name="nom" >
-    <p>prenom :  </p><input type="text" name="prenom" >
-    <input type="submit" value="submit">
+    <p>prenom :  </p><input type="text" name="prenom" ><br /><br />
+     <input class="submit" type="submit" value="submit">
+</div>
 
 
