@@ -35,7 +35,8 @@ passport.use(new LocalStrategy({
                     id: user.id
                 };
                 return done(null, returnUser, {
-                    message: 'Logged In Successfully'
+                    message: 'vous êtes connecté'
+
                 });
             });
         });

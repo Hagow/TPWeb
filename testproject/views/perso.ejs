@@ -1,5 +1,23 @@
-<h1>Test</h1>
+<div class="menu">
+  <ul id="menu_horizontal">
+    <li><a href="/moncompte" target="_blank">Mon compte</a></li>
+    <li><a href="/login" target="_blank">Se connecter</a></li>
+    <li><a href="/signup" target="_blank">Créer un compte</a></li>
+  </ul>
+</div>
+
+<center>
 <h1><%=mesdata.title%></h1>
 <p><%=mesdata.content%></p>
-<p><%=user.email%></p>
+</center>
+<p>Votre email : <%=user.email%></p>
+<p>Votre Nom : <%=user.nom%></p>
+<p>Votre prenom : <%=user.prenom%></p>
+
+<h3>modifier vos informations :</h3>
+  <form method="POST" action="/user/<%= user.id%>" >
+    <p>Nom :  </p><input type="text" name="nom" >
+    <p>prenom :  </p><input type="text" name="prenom" >
+    <input type="submit" value="submit">
+
 

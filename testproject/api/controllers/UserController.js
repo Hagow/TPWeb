@@ -15,8 +15,8 @@ module.exports = {
   data.user = req.user;
 
 	data.mesdata ={
-	title : "le titre",
-	content : "le contenu"
+	title : "Mon compte",
+	content : "Vous trouverez ici les informations de votre compte",
 	};
 
 	console.log(req.user);
