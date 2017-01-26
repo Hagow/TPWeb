@@ -14,13 +14,22 @@ module.exports = {
 
   data.user = req.user;
 
+
+
 	data.mesdata ={
 	title : "Mon compte",
 	content : "Vous trouverez ici les informations de votre compte",
 	};
 
-	console.log(req.user);
-          return res.view('perso',data);
+	  User.findOne(req.user.id)
+    .populate('address')
+    .exec(function(err,user)
+    {
+      console.log(req.user);
+      return res.view('perso',data);
+
+    });
+
       }
 };
 

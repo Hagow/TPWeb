@@ -20,6 +20,10 @@ module.exports = {
                             type: 'string',
                             required: false
                         },
+        address: {
+              collection: 'address',
+              via: 'owner'
+            },
         toJSON: function() {
             var obj = this.toObject();
             delete obj.password;

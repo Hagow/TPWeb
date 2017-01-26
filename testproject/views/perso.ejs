@@ -13,6 +13,7 @@
 <p>Votre email : <%=user.email%></p>
 <p>Votre Nom : <%=user.nom%></p>
 <p>Votre prenom : <%=user.prenom%></p>
+<p>ligne 1 : <%=user.address[0].ligne1%></p>
 </div>
 </center>
 
@@ -23,6 +24,13 @@
   <form method="POST" action="/user/<%= user.id%>" >
     <p>Nom :  </p><input type="text" name="nom" >
     <p>prenom :  </p><input type="text" name="prenom" ><br /><br />
+     <input class="submit" type="submit" value="submit">
+</div>
+
+<div class=modif>
+<h1>Modifier votre adresse :</h1>
+  <form method="POST" action="/address/<%= user.address[0].id%>" >
+    <p>ligne 1 :  </p><input type="text" name="ligne1" ><br /><br />
      <input class="submit" type="submit" value="submit">
 </div>
 
