@@ -20,10 +20,15 @@ module.exports = {
                             type: 'string',
                             required: false
                         },
-        address: {
-              collection: 'address',
-              via: 'owner'
-            },
+        addresses: {
+                            collection: 'address',
+                            type: 'string',
+                            required: false,
+                            via: 'owner'
+                    },
+        avatarUrl: {
+                            type: 'string',
+                            },
         toJSON: function() {
             var obj = this.toObject();
             delete obj.password;
