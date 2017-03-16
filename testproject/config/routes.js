@@ -53,10 +53,14 @@ module.exports.routes = {
       action: 'moncompte'
       },
 
-      'post /user/uploadavatar': {
+      'post /moncompte/uploadavatar': {
       controller: 'UserController',
       action: 'uploadAvatar'
-      }
+      },
+
+      'get /participants': {
+              view: 'participants'
+            }
 
 
   /***************************************************************************

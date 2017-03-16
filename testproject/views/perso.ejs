@@ -6,37 +6,38 @@
   </ul>
 </div>
 
-<center>
-<h1><%=mesdata.title%></h1>
-<p><%=mesdata.content%></p>
-<div class="info">
-<p>Votre email : <%=user.email%></p>
-<p>Votre Nom : <%=user.nom%></p>
-<p>Votre prenom : <%=user.prenom%></p>
+<div>
+  <center>
+    <h1><%=mesdata.title%></h1>
+    <p><%=mesdata.content%></p>
+    <div class="info">
+    <p>Votre email : <%=user.email%></p>
+    <p>Votre Nom : <%=user.nom%></p>
+    <p>Votre prenom : <%=user.prenom%></p>
 
-<br />
+    <br />
 
-<%if (user.addresses.length == null){%>
-<p>Il n'y a pas d'adresse</p>
-<%} else {%>
-<p>Votre Adresse :
-<p>Ligne 1 : <%=user.addresses[0].ligne1%></p>
-<p>Ligne 2 : <%=user.addresses[0].ligne2%></p>
-<p>Ville   : <%=user.addresses[0].ville%></p>
-<p>CodePostal : <%=user.addresses[0].codePostal%></p>
-<%}%>
-
-</div>
+    <%if (user.addresses.length == null){%>
+    <p>Il n'y a pas d'adresse</p>
+    <%} else {%>
+    <p>Votre Adresse :
+    <p>Ligne 1 : <%=user.addresses[0].ligne1%></p>
+    <p>Ligne 2 : <%=user.addresses[0].ligne2%></p>
+    <p>Ville   : <%=user.addresses[0].ville%></p>
+    <p>CodePostal : <%=user.addresses[0].codePostal%></p>
+    <%}%>
 </center>
+</div>
 
 <br /><br />
 
 <div class=modif>
-<h1>Modifier vos informations :</h1>
-  <form method="POST" action="/user/<%= user.id%>" >
-    <p>Nom :  </p><input type="text" name="nom" >
-    <p>prenom :  </p><input type="text" name="prenom" ><br /><br />
-    <input class="submit" type="submit" value="submit">
+  <h1>Modifier vos informations :</h1>
+    <form method="POST" action="/user/<%= user.id%>" >
+      <p>Nom :  </p><input type="text" name="nom" >
+      <p>prenom :  </p><input type="text" name="prenom" ><br /><br />
+      <input class="submit" type="submit" value="submit">
+    </form>
 </div>
 
 <div class=modif>
@@ -48,11 +49,13 @@
     <p>Ville  :  </p><input type="text" name="ville" ><br /><br />
     <p>Pays   :  </p><input type="text" name="pays" ><br /><br />
     <input class="submit" type="submit" value="submit">
+  </form>
 </div>
 
 <div class=modif>
 <h1>Modifier votre image :</h1>
-  <form method="POST" action="/user/upload/<%= user.id%>" >
-    <input class="file" type="file" value="selectFile">
-    <input class="submit" type="submit" value="submit">
+  <form method="POST" action="/moncompte/uploadavatar" >
+    <input class="file" name="avatar" type="file" value="selectFile">
+    <input class="submit" type="submit" value="Upload">
+  </form>
 </div>
