@@ -1,3 +1,4 @@
+console.log("test");
 var xhr = null;
 function initXhr(){
 		xhr = new XMLHttpRequest();
@@ -10,11 +11,18 @@ xhr.onreadystatechange = function(){
 };
 
 function maCallback(response){
-	console.log(response);
+	var h1 = document.createElement("h1");
+	var doc = eval ('('+ response + ')');
+
+	var affiche = document.createTextNode("salut "+doc["prenom"]+" "+doc["nom"]);
+	h1.appendChild(affiche);
+	document.body.appendChild(h1);
 }
 
 function onLoaded(){
+	console.log("test3");
 	document.getElementById("req_get").addEventListener("click",sendReq1);
+	document.getElementById("req_post").addEventListener("click",sendReq2);
 
 	//sendReq3();
 }
@@ -31,11 +39,17 @@ function sendReq3() {
 }
 */
 function sendReq1() {
-	xhr.open("get", "index.html?prenom=Chrsitopher&nom=SABOYA", true);
+	var prenom = encodeURIComponent("christopher");
+	var nom = encodeURIComponent("saboya");
+	xhr.open("get", "index.php?prenom="+prenom+"&nom="+nom, true);
 	xhr.send(null);
 }
 
 function sendReq2() {
+	var prenom = document.getElementById("btn_post").value;
+	var nom = document.getElementById("btn_post2").value;
 	xhr.open("post", "index2.php", true);
-	xhr.send("prenom=Chrsitopher&nom=SABOYA");
+	xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	xhr.send("prenom="+prenom+"&nom="+nom);
 }
+console.log("test2");
