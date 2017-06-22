@@ -11,25 +11,20 @@
     <h1><%=mesdata.title%></h1>
     <p><%=mesdata.content%></p>
     <div class="info">
-    <p>Votre email : <%=user.email%></p>
-    <p>Votre Nom : <%=user.nom%></p>
-    <p>Votre prenom : <%=user.prenom%></p>
+      <p>Votre email : <%=user.email%></p>
+      <p>Votre Nom : <%=user.nom%></p>
+      <p>Votre prenom : <%=user.prenom%></p>
 
-    <br />
+      <br />
+<!-- insertion 1-->
 
-    <%if (user.addresses.length == null){%>
-    <p>Il n'y a pas d'adresse</p>
-    <%} else {%>
-    <p>Votre Adresse :
-    <p>Ligne 1 : <%=user.addresses[0].ligne1%></p>
-    <p>Ligne 2 : <%=user.addresses[0].ligne2%></p>
-    <p>Ville   : <%=user.addresses[0].ville%></p>
-    <p>CodePostal : <%=user.addresses[0].codePostal%></p>
-    <%}%>
-</center>
+    </div>
+  </center>
 </div>
 
 <br /><br />
+
+<!-- insertion 2-->
 
 <div class=modif>
   <h1>Modifier vos informations :</h1>
@@ -40,17 +35,7 @@
     </form>
 </div>
 
-<div class=modif>
-<h1>Modifier votre adresse :</h1>
-  <form method="POST" action="/address/<%= user.addresses[0].id%>" >
-    <p>Ligne1 :  </p><input type="text" name="ligne1" >
-    <p>Ligne2 :  </p><input type="text" name="ligne2" ><br /><br />
-    <p>Code Postal :  </p><input type="text" name="codePostal" ><br /><br />
-    <p>Ville  :  </p><input type="text" name="ville" ><br /><br />
-    <p>Pays   :  </p><input type="text" name="pays" ><br /><br />
-    <input class="submit" type="submit" value="submit">
-  </form>
-</div>
+
 
 <div class=modif>
 <h1>Modifier votre image :</h1>
@@ -59,3 +44,11 @@
     <input class="submit" type="submit" value="Upload">
   </form>
 </div>
+
+
+<div>
+
+<input id="getAdress" type="button" value="address" />
+
+</div>
+

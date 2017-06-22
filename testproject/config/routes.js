@@ -58,6 +58,11 @@ module.exports.routes = {
       action: 'uploadAvatar'
       },
 
+      'post /moncompte/test': {
+      controller: 'UserController',
+       action: 'test'
+      },
+
       'get /participants': {
               view: 'participants'
             }

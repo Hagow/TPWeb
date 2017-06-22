@@ -11,6 +11,10 @@ module.exports = {
 	perso: function (req, res){
 	return res.view('perso');
 	},
+
+	test: function (req, res){
+	res.json({var1: 'test', var2: 'test2'})
+	},
 	moncompte: function (req, res){
 	var data ={};
 
@@ -22,8 +26,8 @@ module.exports = {
 	};
 
 	   User.findOne(req.user.id).populate('addresses').exec(function(err,user){
-                console.log(user);
                 data.user = user;
+                console.log(data);
                 return res.view('perso',data);
             });
 
@@ -33,6 +37,15 @@ module.exports = {
                 return res.view('perso',data);
             });
         },
+
+
+
+   test: function(req, res) {
+    var wheree = {
+    id: req.user.id,
+    email: "test@test.fr"
+    };
+   }
 
   /**
    * Upload avatar for currently logged-in user
