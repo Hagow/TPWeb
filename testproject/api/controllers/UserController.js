@@ -45,7 +45,13 @@ module.exports = {
     id: req.user.id,
     email: "test@test.fr"
     };
-   }
+    User
+      .findOne(where)
+      .populate('addresses')
+      .exe(function(err, user){
+        return res.json(user);
+        });
+   },
 
   /**
    * Upload avatar for currently logged-in user
